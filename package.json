@@ -1,0 +1,16 @@
+{
+  "name": "curso_javascript_es6",
+  "version": "1.0.0",
+  "main": "index.html",
+  "repository": "https://github.com/Paulo301/Curso_JavaScript_ES6.git",
+  "author": "Paulo301 <paulovictor1918@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/cli": "^7.10.1",
+    "@babel/core": "^7.10.2",
+    "@babel/preset-env": "^7.10.2"
+  },
+  "scripts": {
+    "dev": "babel ./index.js -o ./bundle.js -w"
+  }
+}
