@@ -1,52 +1,21 @@
-// class TodoList {
-//   constructor() {
-//     this.todos = [];
-//   }
+// const a = 1; //Constante
+// //a=3; //Não pode ser realizado
 
-//   addTodo() {
-//     this.todos.push("Novo todo");
-//     console.log(this.todos);
-//   }
+// const usuario = {
+//   nome: "Paulo"
 // }
 
-// class Matematica {
-//Metodos estaticos não observam o resto da classe, são
-//normalmente utilizados para receber dados, trata-los e devolver algo
-//   static soma(a, b) {                               
-//     return a + b;
-//   }
-// }
+// usuario.nome = "Victor"; //Realização de mutação
 
-// console.log(Matematica.soma(1, 2));
+function teste(x) { //Cada conjunto de chaves é um escopo
+  let y = 2; //Variável de escopo
 
-class List {
-  constructor() {
-    this.data = [];
+  if (x > 5) {
+    let y = 4;
+
+    console.log(x, y);
   }
-
-  add(data) {
-    this.data.push(data);
-    console.log(this.data);
-  }
+  console.log(y);
 }
 
-//Utilizando o conceito de herança
-class TodoList extends List {
-  constructor() {
-    super();
-
-    this.usuario = "Paulo";
-  }
-
-  mostraUsuario() {
-    console.log(this.usuario);
-  }
-}
-
-const minhaList = new TodoList();
-
-document.getElementById("novotodo").onclick = function() {
-  minhaList.add("Novo todo");
-}
-
-minhaList.mostraUsuario();
+teste(10);
