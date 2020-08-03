@@ -53,21 +53,34 @@
 
 //Aula 7: Arrow functions
 
-const arr = [1,2,3,4,5,6,7,8,9];
+// const arr = [1,2,3,4,5,6,7,8,9];
 
-const newArr = arr.map( item => item*2 );//utilizado quando se tem apenas 1 parametro
+// const newArr = arr.map( item => item*2 );//utilizado quando se tem apenas 1 parametro
 
-console.log("Original ",arr);
-console.log("Map ",newArr);
+// console.log("Original ",arr);
+// console.log("Map ",newArr);
 
-const newArr2 = arr.map( (item,index) => item*2 + index );//para mais de 1 parametro usar parenteses
+// const newArr2 = arr.map( (item,index) => item*2 + index );//para mais de 1 parametro usar parenteses
 
-console.log("Map2 ",newArr2);
+// console.log("Map2 ",newArr2);
 
-const teste = () => "teste";
+// const teste = () => "teste";
 
-console.log(teste());
+// console.log(teste());
 
-const teste2 = () => ({nome: "Paulo"});
+// const teste2 = () => ({nome: "Paulo"});
 
-console.log(teste2());
+// console.log(teste2());
+
+//Aula 8: Valores padrão
+
+function soma1(a = 3, b = 8){
+  return a + b;
+}
+
+console.log(soma1(1));
+console.log(soma1());
+
+const soma2 = (a = 3, b = 8) => a + b;
+
+console.log(soma2());

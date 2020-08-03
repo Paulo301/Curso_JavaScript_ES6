@@ -36,29 +36,30 @@
 // })
 // console.log("Find: ",find);
 //Aula 7: Arrow functions
-var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-var newArr = arr.map(function (item) {
-  return item * 2;
-}); //utilizado quando se tem apenas 1 parametro
+// const arr = [1,2,3,4,5,6,7,8,9];
+// const newArr = arr.map( item => item*2 );//utilizado quando se tem apenas 1 parametro
+// console.log("Original ",arr);
+// console.log("Map ",newArr);
+// const newArr2 = arr.map( (item,index) => item*2 + index );//para mais de 1 parametro usar parenteses
+// console.log("Map2 ",newArr2);
+// const teste = () => "teste";
+// console.log(teste());
+// const teste2 = () => ({nome: "Paulo"});
+// console.log(teste2());
+//Aula 8: Valores padrão
+function soma1() {
+  var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3;
+  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 8;
+  return a + b;
+}
 
-console.log("Original ", arr);
-console.log("Map ", newArr);
-var newArr2 = arr.map(function (item, index) {
-  return item * 2 + index;
-}); //para mais de 1 parametro usar parenteses
+console.log(soma1(1));
+console.log(soma1());
 
-console.log("Map2 ", newArr2);
-
-var teste = function teste() {
-  return "teste";
+var soma2 = function soma2() {
+  var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3;
+  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 8;
+  return a + b;
 };
 
-console.log(teste());
-
-var teste2 = function teste2() {
-  return {
-    nome: "Paulo"
-  };
-};
-
-console.log(teste2());
+console.log(soma2());
