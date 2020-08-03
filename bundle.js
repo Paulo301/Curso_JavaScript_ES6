@@ -47,19 +47,32 @@
 // const teste2 = () => ({nome: "Paulo"});
 // console.log(teste2());
 //Aula 8: Valores padrão
-function soma1() {
-  var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3;
-  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 8;
-  return a + b;
+// function soma1(a = 3, b = 8){
+//   return a + b;
+// }
+// console.log(soma1(1));
+// console.log(soma1());
+// const soma2 = (a = 3, b = 8) => a + b;
+// console.log(soma2());
+//Aula 9: Desestruturação
+var usuario = {
+  nome: "Paulo",
+  idade: 22,
+  endereco: {
+    cidade: "São Luís",
+    estado: "MA"
+  }
+};
+var nome = usuario.nome,
+    idade = usuario.idade,
+    cidade = usuario.endereco.cidade;
+console.log(nome);
+console.log(idade);
+console.log(cidade);
+
+function mostraNome(_ref) {
+  var nome = _ref.nome;
+  return nome;
 }
 
-console.log(soma1(1));
-console.log(soma1());
-
-var soma2 = function soma2() {
-  var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3;
-  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 8;
-  return a + b;
-};
-
-console.log(soma2());
+console.log(mostraNome(usuario));

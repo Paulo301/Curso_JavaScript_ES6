@@ -74,13 +74,36 @@
 
 //Aula 8: Valores padrão
 
-function soma1(a = 3, b = 8){
-  return a + b;
+// function soma1(a = 3, b = 8){
+//   return a + b;
+// }
+
+// console.log(soma1(1));
+// console.log(soma1());
+
+// const soma2 = (a = 3, b = 8) => a + b;
+
+// console.log(soma2());
+
+//Aula 9: Desestruturação
+
+const usuario = {
+  nome: "Paulo",
+  idade: 22,
+  endereco: {
+    cidade: "São Luís",
+    estado: "MA"
+  }
+};
+
+const { nome, idade, endereco: {cidade}} = usuario;
+
+console.log(nome);
+console.log(idade);
+console.log(cidade);
+
+function mostraNome({nome}){
+  return nome;
 }
 
-console.log(soma1(1));
-console.log(soma1());
-
-const soma2 = (a = 3, b = 8) => a + b;
-
-console.log(soma2());
+console.log(mostraNome(usuario));
