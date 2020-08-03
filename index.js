@@ -24,29 +24,50 @@
 
 //Aula 6: Operações em arrays
 
+// const arr = [1,2,3,4,5,6,7,8,9];
+
+// const newArr = arr.map(function(item, index){//Percorre todos os itens da lista e os altera se desejado
+//   return item*2 + index;
+// });
+
+// console.log("Original ",arr);
+// console.log("Map ",newArr);
+
+// const sum = arr.reduce(function(total, next){//Tem como resultado apenas um valor, atribui o return ao total 
+//   return total+next;
+// });
+
+// console.log("Reduce ",sum);
+
+// const filter = arr.filter(function(item){//Filtra a lista mantendo apenas os casos com resultado true
+//   return item%2==0;
+// });
+
+// console.log("Filter: ",filter);
+
+// const find = arr.find(function(item){//retorna o item se for encontrado ou undefined se não
+//   return item ===10;
+// })
+
+// console.log("Find: ",find);
+
+//Aula 7: Arrow functions
+
 const arr = [1,2,3,4,5,6,7,8,9];
 
-const newArr = arr.map(function(item, index){//Percorre todos os itens da lista e os altera se desejado
-  return item*2 + index;
-});
+const newArr = arr.map( item => item*2 );//utilizado quando se tem apenas 1 parametro
 
 console.log("Original ",arr);
 console.log("Map ",newArr);
 
-const sum = arr.reduce(function(total, next){//Tem como resultado apenas um valor, atribui o return ao total 
-  return total+next;
-});
+const newArr2 = arr.map( (item,index) => item*2 + index );//para mais de 1 parametro usar parenteses
 
-console.log("Reduce ",sum);
+console.log("Map2 ",newArr2);
 
-const filter = arr.filter(function(item){//Filtra a lista mantendo apenas os casos com resultado true
-  return item%2==0;
-});
+const teste = () => "teste";
 
-console.log("Filter: ",filter);
+console.log(teste());
 
-const find = arr.find(function(item){//retorna o item se for encontrado ou undefined se não
-  return item ===10;
-})
+const teste2 = () => ({nome: "Paulo"});
 
-console.log("Find: ",find);
+console.log(teste2());

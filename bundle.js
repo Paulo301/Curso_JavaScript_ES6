@@ -17,25 +17,48 @@
 // }
 // teste(10);
 //Aula 6: Operações em arrays
+// const arr = [1,2,3,4,5,6,7,8,9];
+// const newArr = arr.map(function(item, index){//Percorre todos os itens da lista e os altera se desejado
+//   return item*2 + index;
+// });
+// console.log("Original ",arr);
+// console.log("Map ",newArr);
+// const sum = arr.reduce(function(total, next){//Tem como resultado apenas um valor, atribui o return ao total 
+//   return total+next;
+// });
+// console.log("Reduce ",sum);
+// const filter = arr.filter(function(item){//Filtra a lista mantendo apenas os casos com resultado true
+//   return item%2==0;
+// });
+// console.log("Filter: ",filter);
+// const find = arr.find(function(item){//retorna o item se for encontrado ou undefined se não
+//   return item ===10;
+// })
+// console.log("Find: ",find);
+//Aula 7: Arrow functions
 var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-var newArr = arr.map(function (item, index) {
-  //Percorre todos os itens da lista e os altera se desejado
-  return item * 2 + index;
-});
+var newArr = arr.map(function (item) {
+  return item * 2;
+}); //utilizado quando se tem apenas 1 parametro
+
 console.log("Original ", arr);
 console.log("Map ", newArr);
-var sum = arr.reduce(function (total, next) {
-  //Tem como resultado apenas um valor, atribui o return ao total 
-  return total + next;
-});
-console.log("Reduce ", sum);
-var filter = arr.filter(function (item) {
-  //Filtra a lista mantendo apenas os casos com resultado true
-  return item % 2 == 0;
-});
-console.log("Filter: ", filter);
-var find = arr.find(function (item) {
-  //retorna o item se for encontrado ou undefined se não
-  return item === 10;
-});
-console.log("Find: ", find);
+var newArr2 = arr.map(function (item, index) {
+  return item * 2 + index;
+}); //para mais de 1 parametro usar parenteses
+
+console.log("Map2 ", newArr2);
+
+var teste = function teste() {
+  return "teste";
+};
+
+console.log(teste());
+
+var teste2 = function teste2() {
+  return {
+    nome: "Paulo"
+  };
+};
+
+console.log(teste2());
