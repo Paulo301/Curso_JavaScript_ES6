@@ -112,52 +112,59 @@
 
 //REST
 
-const usuario = {
-  nome: "Paulo",
-  idade: 22,
-  endereco: {
-    cidade: "São Luís",
-    estado: "MA"
-  }
-};
+// const usuario = {
+//   nome: "Paulo",
+//   idade: 22,
+//   endereco: {
+//     cidade: "São Luís",
+//     estado: "MA"
+//   }
+// };
 
-const { nome, ...resto} = usuario;
+// const { nome, ...resto} = usuario;
 
-console.log(nome);
-console.log(resto);
+// console.log(nome);
+// console.log(resto);
 
-const arr = [1,2,3,4,5,6];
+// const arr = [1,2,3,4,5,6];
 
-const [a, b, ...c] = arr;
+// const [a, b, ...c] = arr;
 
-console.log(a);
-console.log(b);
-console.log(c);
+// console.log(a);
+// console.log(b);
+// console.log(c);
 
-function soma(a, b, ...params){
-  return params;
-}
+// function soma(a, b, ...params){
+//   return params;
+// }
 
-console.log(soma(1,2,3,4,5,6,7));
+// console.log(soma(1,2,3,4,5,6,7));
 
-//SPREAD
+// //SPREAD
 
-const arr1 = [1,2,3];
-const arr2 = [4,5,6];
+// const arr1 = [1,2,3];
+// const arr2 = [4,5,6];
 
-const arr3 = [...arr1, ...arr2];
+// const arr3 = [...arr1, ...arr2];
 
-console.log(arr3);
+// console.log(arr3);
 
-const usuario1 = {
-  nome: "Paulo",
-  idade: 22,
-  endereco: {
-    cidade: "São Luís",
-    estado: "MA"
-  }
-};
+// const usuario1 = {
+//   nome: "Paulo",
+//   idade: 22,
+//   endereco: {
+//     cidade: "São Luís",
+//     estado: "MA"
+//   }
+// };
 
-const usuario2 = {...usuario1, nome: "Paulo Victor"};
+// const usuario2 = {...usuario1, nome: "Paulo Victor"};
 
-console.log(usuario2);
+// console.log(usuario2);
+
+//Aula 11: Template Literals
+
+const nome = "Paulo";
+const idade = 22;
+
+console.log(`Meu nome é ${nome} e tenho ${idade} anos.`);
