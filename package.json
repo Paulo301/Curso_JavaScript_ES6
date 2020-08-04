@@ -5,13 +5,16 @@
   "repository": "https://github.com/Paulo301/Curso_JavaScript_ES6.git",
   "author": "Paulo301 <paulovictor1918@gmail.com>",
   "license": "MIT",
-  "dependencies": {
+  "devDependencies": {
     "@babel/cli": "^7.10.1",
     "@babel/core": "^7.10.2",
     "@babel/plugin-proposal-object-rest-spread": "^7.11.0",
-    "@babel/preset-env": "^7.10.2"
+    "@babel/preset-env": "^7.10.2",
+    "babel-loader": "^8.1.0",
+    "webpack": "^4.44.1",
+    "webpack-cli": "^3.3.12"
   },
   "scripts": {
-    "dev": "babel ./index.js -o ./bundle.js -w"
+    "dev": "webpack --mode=development -w"
   }
 }
