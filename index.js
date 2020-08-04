@@ -87,6 +87,31 @@
 
 //Aula 9: Desestruturação
 
+// const usuario = {
+//   nome: "Paulo",
+//   idade: 22,
+//   endereco: {
+//     cidade: "São Luís",
+//     estado: "MA"
+//   }
+// };
+
+// const { nome, idade, endereco: {cidade}} = usuario;
+
+// console.log(nome);
+// console.log(idade);
+// console.log(cidade);
+
+// function mostraNome({nome}){
+//   return nome;
+// }
+
+// console.log(mostraNome(usuario));
+
+//Aula 10: Operadores rest/spread
+
+//REST
+
 const usuario = {
   nome: "Paulo",
   idade: 22,
@@ -96,14 +121,43 @@ const usuario = {
   }
 };
 
-const { nome, idade, endereco: {cidade}} = usuario;
+const { nome, ...resto} = usuario;
 
 console.log(nome);
-console.log(idade);
-console.log(cidade);
+console.log(resto);
 
-function mostraNome({nome}){
-  return nome;
+const arr = [1,2,3,4,5,6];
+
+const [a, b, ...c] = arr;
+
+console.log(a);
+console.log(b);
+console.log(c);
+
+function soma(a, b, ...params){
+  return params;
 }
 
-console.log(mostraNome(usuario));
+console.log(soma(1,2,3,4,5,6,7));
+
+//SPREAD
+
+const arr1 = [1,2,3];
+const arr2 = [4,5,6];
+
+const arr3 = [...arr1, ...arr2];
+
+console.log(arr3);
+
+const usuario1 = {
+  nome: "Paulo",
+  idade: 22,
+  endereco: {
+    cidade: "São Luís",
+    estado: "MA"
+  }
+};
+
+const usuario2 = {...usuario1, nome: "Paulo Victor"};
+
+console.log(usuario2);
