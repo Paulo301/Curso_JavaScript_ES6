@@ -1,123 +1,116 @@
 "use strict";
 
-//Aula 5: Const & Let
-// const a = 1; //Constante
-// //a=3; //Não pode ser realizado
-// const usuario = {
-//   nome: "Paulo"
-// }
-// usuario.nome = "Victor"; //Realização de mutação
-// function teste(x) { //Cada conjunto de chaves é um escopo
-//   let y = 2; //Variável de escopo
-//   if (x > 5) {
-//     let y = 4;
-//     console.log(x, y);
+//1° exercicio
+// class Usuario{
+//   constructor(email, senha){
+//     this.email = email;
+//     this.senha = senha;
+//     this.admin = false;
 //   }
-//   console.log(y);
+//   isAdmin() {
+//     return this.admin;
+//   }
 // }
-// teste(10);
-//Aula 6: Operações em arrays
-// const arr = [1,2,3,4,5,6,7,8,9];
-// const newArr = arr.map(function(item, index){//Percorre todos os itens da lista e os altera se desejado
-//   return item*2 + index;
-// });
-// console.log("Original ",arr);
-// console.log("Map ",newArr);
-// const sum = arr.reduce(function(total, next){//Tem como resultado apenas um valor, atribui o return ao total 
-//   return total+next;
-// });
-// console.log("Reduce ",sum);
-// const filter = arr.filter(function(item){//Filtra a lista mantendo apenas os casos com resultado true
-//   return item%2==0;
-// });
-// console.log("Filter: ",filter);
-// const find = arr.find(function(item){//retorna o item se for encontrado ou undefined se não
-//   return item ===10;
-// })
-// console.log("Find: ",find);
-//Aula 7: Arrow functions
-// const arr = [1,2,3,4,5,6,7,8,9];
-// const newArr = arr.map( item => item*2 );//utilizado quando se tem apenas 1 parametro
-// console.log("Original ",arr);
-// console.log("Map ",newArr);
-// const newArr2 = arr.map( (item,index) => item*2 + index );//para mais de 1 parametro usar parenteses
-// console.log("Map2 ",newArr2);
-// const teste = () => "teste";
-// console.log(teste());
-// const teste2 = () => ({nome: "Paulo"});
-// console.log(teste2());
-//Aula 8: Valores padrão
-// function soma1(a = 3, b = 8){
-//   return a + b;
+// class Admin extends Usuario{
+//   constructor(){
+//     super();
+//     this.admin = true;
+//   }
 // }
-// console.log(soma1(1));
-// console.log(soma1());
-// const soma2 = (a = 3, b = 8) => a + b;
-// console.log(soma2());
-//Aula 9: Desestruturação
-// const usuario = {
-//   nome: "Paulo",
-//   idade: 22,
+// const User1 = new Usuario('email@teste.com', 'senha123');
+// const Adm1 = new Admin('email@teste.com', 'senha123');
+// console.log(User1.isAdmin()) // false
+// console.log(Adm1.isAdmin()) // true
+//2° exercicio
+// const usuarios = [
+//   { nome: 'Diego', idade: 23, empresa: 'Rocketseat' },
+//   { nome: 'Gabriel', idade: 15, empresa: 'Rocketseat' },
+//   { nome: 'Lucas', idade: 30, empresa: 'Facebook' },
+//  ];
+// const idades = usuarios.map(item => item.idade);
+// console.log(idades);
+// const usuarios1 = usuarios.filter(item => item.idade>18 && item.empresa === "Rocketseat");
+// console.log(usuarios1);
+// const usuarios2 = usuarios.find(item => item.empresa === "Google");
+// console.log(usuarios2);
+// const usuarios3 = (usuarios.map(function (item){
+//   item.idade*=2;
+//   return item;
+// })).filter(item => item.idade <= 50);
+// console.log(usuarios3);
+//3° exercicio
+// 3.1
+// const arr = [1, 2, 3, 4, 5];
+// console.log(arr.map(item => item+10));
+// 3.2
+// Dica: Utilize uma constante pra function
+// const usuario = { nome: 'Diego', idade: 23 };
+// const mostraIdade = usuario => usuario.idade;
+// console.log(mostraIdade(usuario));
+// 3.3
+// Dica: Utilize uma constante pra function
+// const nome = "Diego";
+// const idade = 23;
+// const mostraUsuario = (nome = 'Diego', idade = 18) => ({ nome, idade });
+// console.log(mostraUsuario(nome, idade));
+// console.log(mostraUsuario(nome));
+// 3.4
+// const promise = () => new Promise((resolve, reject) => resolve());
+// console.log(promise);
+//4° exercicio
+//4.1
+// const empresa = {
+//   nome: 'Rocketseat',
 //   endereco: {
-//     cidade: "São Luís",
-//     estado: "MA"
+//   cidade: 'Rio do Sul',
+//   estado: 'SC',
 //   }
 // };
-// const { nome, idade, endereco: {cidade}} = usuario;
-// console.log(nome);
-// console.log(idade);
-// console.log(cidade);
-// function mostraNome({nome}){
-//   return nome;
+// const { nome, endereco: {cidade,estado}} = empresa;
+// console.log(nome); // Rocketseat
+// console.log(cidade); // Rio do Sul
+// console.log(estado); // SC
+//4.2
+// function mostraInfo({nome,idade}) {
+//   return `${nome} tem ${idade} anos.`;
+//  }
+//  console.log(mostraInfo({ nome: 'Diego', idade: 23 }));
+//5° exercicio
+//5.1 Rest
+// const arr = [1, 2, 3, 4, 5, 6]
+// const [x, ...y] = arr;
+// console.log(x); // 1
+// console.log(y); // [2, 3, 4, 5, 6]
+// // function soma...
+// function soma(...params){
+//   return params.reduce((todos, next) => todos+next);
 // }
-// console.log(mostraNome(usuario));
-//Aula 10: Operadores rest/spread
-//REST
+// console.log(soma(1, 2, 3, 4, 5, 6)); // 21
+// console.log(soma(1, 2)); // 3
+// //5.2 Spread
 // const usuario = {
-//   nome: "Paulo",
-//   idade: 22,
+//   nome: 'Diego',
+//   idade: 23,
 //   endereco: {
-//     cidade: "São Luís",
-//     estado: "MA"
+//   cidade: 'Rio do Sul',
+//   uf: 'SC',
+//   pais: 'Brasil',
 //   }
 // };
-// const { nome, ...resto} = usuario;
-// console.log(nome);
-// console.log(resto);
-// const arr = [1,2,3,4,5,6];
-// const [a, b, ...c] = arr;
-// console.log(a);
-// console.log(b);
-// console.log(c);
-// function soma(a, b, ...params){
-//   return params;
-// }
-// console.log(soma(1,2,3,4,5,6,7));
-// //SPREAD
-// const arr1 = [1,2,3];
-// const arr2 = [4,5,6];
-// const arr3 = [...arr1, ...arr2];
-// console.log(arr3);
-// const usuario1 = {
-//   nome: "Paulo",
-//   idade: 22,
-//   endereco: {
-//     cidade: "São Luís",
-//     estado: "MA"
-//   }
-// };
-// const usuario2 = {...usuario1, nome: "Paulo Victor"};
+// const usuario2 = {...usuario, nome:"Gabriel"};
+// const usuario3 = {...usuario, cidade:"Lontras"};
 // console.log(usuario2);
-//Aula 11: Template Literals
-// const nome = "Paulo";
-// const idade = 22;
-// console.log(`Meu nome é ${nome} e tenho ${idade} anos.`);
-//Aula 12: Object Short Syntax
-var nome = "Paulo";
-var idade = 22;
+// console.log(usuario3);
+//6° exercicio
+// const usuario = 'Diego';
+// const idade = 23;
+// console.log(`O usuário ${usuario} possui ${idade} anos`);
+//7° exercicio
+var nome = 'Diego';
+var idade = 23;
 var usuario = {
   nome: nome,
   idade: idade,
-  instituição: "UFMA"
+  cidade: 'Rio do Sul'
 };
 console.log(usuario);
