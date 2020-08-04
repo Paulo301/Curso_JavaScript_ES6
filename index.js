@@ -164,7 +164,20 @@
 
 //Aula 11: Template Literals
 
+// const nome = "Paulo";
+// const idade = 22;
+
+// console.log(`Meu nome é ${nome} e tenho ${idade} anos.`);
+
+//Aula 12: Object Short Syntax
+
 const nome = "Paulo";
 const idade = 22;
 
-console.log(`Meu nome é ${nome} e tenho ${idade} anos.`);
+const usuario = {
+  nome,
+  idade,
+  instituição: "UFMA"
+};
+
+console.log(usuario);
