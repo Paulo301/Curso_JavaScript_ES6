@@ -21,6 +21,7 @@
     "build": "webpack --mode=production"
   },
   "dependencies": {
-    "@babel/polyfill": "^7.10.4"
+    "@babel/polyfill": "^7.10.4",
+    "axios": "^0.19.2"
   }
 }

@@ -1,25 +1,16 @@
-const minhaPromise = () => new Promise((resolve, reject) => {
-  setTimeout(() => {resolve("OK")}, 2000);
-});
+import axios from "axios";
 
-// minhaPromise()
-//   .then(response => {
-//     console.log(response);
-//   })
-//   .catch(err => {
+class Api{
+  static async getUserInfo(username){
+    try{
+      const response = await axios.get(`https://api.github.com/users/${username}`);
 
-//   });
-
-// async function executaPromise(){
-//   console.log(await minhaPromise());//await so pode ser usado dentro de funções assincronas
-//   console.log(await minhaPromise());
-//   console.log(await minhaPromise());
-// }
-
-const executaPromise = async () => {
-  console.log(await minhaPromise());
-  console.log(await minhaPromise());
-  console.log(await minhaPromise());
+      console.log(response);
+    } catch(err){
+      console.warn("Erro na api")
+    }
+  }
 }
 
-executaPromise();//Se torna uma promise, da pra usar .then nela
+Api.getUserInfo("diego3g");
+Api.getUserInfo("diego335466g");
